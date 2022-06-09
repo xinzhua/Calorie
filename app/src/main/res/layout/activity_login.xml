@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".view.login.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:ignore="UselessParent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="40sp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_margin="20sp"
+                android:elevation="@dimen/item_margin"
+                android:fadingEdge="vertical"
+                android:src="@drawable/ic_baseline_local_dining_24"
+                android:tint="@color/white" />
+
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/mProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="invisible"
+                app:indicatorColor="@color/col_low"
+                app:trackColor="@color/white" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="10sp"
+                android:hint="@string/hintEmail"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                app:hintAnimationEnabled="true"
+                app:startIconDrawable="@drawable/ic_baseline_alternate_email_24"
+                app:startIconTint="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="10sp"
+                android:hint="@string/hintPassword"
+                android:textColorHint="@color/black"
+                app:hintAnimationEnabled="true"
+                app:startIconDrawable="@drawable/ic_baseline_vpn_key_24"
+                app:startIconTint="@color/colorPrimary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="10sp"
+                android:layout_marginBottom="20sp"
+                android:padding="15sp"
+                android:text="@string/btnTitleLogin"
+                android:textAllCaps="false"
+                app:backgroundTint="#2FA747" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/item_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noAccount"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+
+
+                <TextView
+                    android:id="@+id/tvCreateAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginRight="10sp"
+                    android:fontFamily="@font/mblack"
+                    android:text="@string/titleCreateAccount"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

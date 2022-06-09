@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10sp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:clickable="true"
+            app:strokeWidth="1dp"
+            app:cardCornerRadius="0sp"
+            app:cardBackgroundColor="#F4F4F4"
+            app:strokeColor="#DCDCDC"
+            app:cardElevation="0dp"
+            app:rippleColor="@color/col_low_half"
+            android:focusable="true"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tvEntryDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:fontFamily="@font/mmedium"
+                    android:layout_marginTop="5sp"
+                    android:textColor="#8B939B"
+                    android:textSize="13sp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCalorie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="#151515"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/tvLimit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5sp"
+                        android:gravity="center"
+                        android:text="@string/kcal"
+                        android:textColor="#8B939B"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/tvCalPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10sp"
+                        android:gravity="center"
+                        android:textColor="#2B8A3E"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5sp"
+                        android:gravity="center"
+                        android:text="@string/percent"
+                        android:fontFamily="@font/mmedium"
+                        android:textColor="#8B939B"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/calProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5sp"
+                    android:max="100"
+                    app:trackThickness="5sp"
+                    android:progress="50"
+                    app:indicatorColor="#2B8A3E"
+                    app:trackColor="#802B8A3E" />
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/entriesList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            android:id="@+id/notEntryLayout"
+            layout="@layout/item_no_entry" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".view.entryscreen.EntryActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2B8A3E">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icBack"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="14sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:tint="@color/white" />
+
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10sp"
+            android:layout_toEndOf="@+id/icBack"
+            android:text="@string/titleEntry"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topBar"
+        android:padding="@dimen/item_margin"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintFoodName"
+            app:startIconTint="@color/colorPrimary"
+            app:startIconDrawable="@drawable/ic_baseline_fastfood_24"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundColor="@color/white"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameField"
+                android:inputType="textPersonName"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintCalorie"
+            app:startIconTint="@color/colorPrimary"
+            app:startIconDrawable="@drawable/ic_baseline_exposure_plus_2_24"
+            app:suffixText="kCal"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundColor="@color/white"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/calorieField"
+                android:maxLength="6"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/timeField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hintTime"
+            app:startIconTint="@color/colorPrimary"
+            app:startIconDrawable="@drawable/ic_baseline_alarm_on_24"
+            app:hintAnimationEnabled="true"
+            app:boxBackgroundColor="@color/white"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTime"
+                android:focusable="false"
+                android:inputType="number"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/photoEntry"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:layout_marginTop="@dimen/item_margin"
+            android:src="@drawable/img_add"
+            android:scaleType="centerCrop"/>
+
+        <Button
+            android:id="@+id/btnDailyLimit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="@string/btnDailyLimitTitle"/>
+
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/mProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:trackColor="@color/colorPrimary"
+            android:visibility="invisible"
+            app:indicatorColor="@color/white"
+            android:indeterminate="true"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+
+        android:id="@+id/btnPublishEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/white"
+        android:layout_margin="20sp"
+        app:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:iconTint="@color/white"
+        app:icon="@drawable/ic_baseline_save_24"
+        android:focusable="true"
+        tools:ignore="RelativeOverlap" />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+
+        android:id="@+id/btnDeleteEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginBottom="20sp"
+        android:clickable="true"
+        android:text="@string/delete"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="#DF2424"
+        app:icon="@drawable/ic_baseline_delete_sweep_24"
+        app:iconTint="@color/white"
+        app:tint="@color/white"
+        android:focusable="true" />
+
+
+</RelativeLayout>

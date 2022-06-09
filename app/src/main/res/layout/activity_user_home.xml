@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.user.UserHomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2B8A3E">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icLogOut"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="14sp"
+            android:scaleX="-1"
+            android:background="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_logout"
+            android:tint="@color/white" />
+
+
+        <TextView
+            android:id="@+id/tvCurrentDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/icSelectDate"
+            android:layout_toEndOf="@+id/icLogOut"
+            android:gravity="center"
+            android:text="@string/today"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icSelectDate"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_alignParentEnd="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="14sp"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:tint="@color/white" />
+
+
+    </RelativeLayout>
+
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topBar"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/docsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/item_margin" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+    <include
+        android:id="@+id/notEntryLayout"
+        android:layout_below="@+id/topBar"
+        layout="@layout/item_no_entry"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content" />
+
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnAddEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20sp"
+        android:clickable="true"
+        android:text="@string/btnTitleAdd"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:icon="@drawable/ic_baseline_control_point_24"
+        app:iconTint="@color/white"
+        app:tint="@color/white"
+        android:focusable="true" />
+
+
+</RelativeLayout>

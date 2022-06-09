@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2B8A3E</color>
+    <color name="black">#212121</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="col_low">#2B8A3E</color>
+    <color name="col_low_half">#802B8A3E</color>
+    <color name="col_mid">#8A7D2B</color>
+    <color name="col_mid_half">#808A7D2B</color>
+    <color name="col_high">#8A462B</color>
+    <color name="col_high_half">#808A462B</color>
+</resources>
